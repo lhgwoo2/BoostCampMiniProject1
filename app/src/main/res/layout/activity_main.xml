@@ -6,13 +6,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
     tools:context="com.example.week1.MainActivity">
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="?attr/colorPrimary"
+            android:background="#3b5998"
             android:minHeight="?attr/actionBarSize"
             android:theme="?attr/actionBarTheme"
             >
@@ -32,14 +34,18 @@
                     app:srcCompat="@drawable/ic_plain_white" />
 
                     <AutoCompleteTextView
+                        style="@style/AppTheme"
                         android:id="@+id/autoSearch"
                         android:layout_width="wrap_content"
                         android:layout_height="55dp"
                         android:layout_weight="20"
-                        android:text="검색"
+                        android:hint="검색"
+                        android:textColorHint="#fff"
                         android:textSize="15sp"
-                        android:drawableLeft="@drawable/ic_search_white"
-                        android:textColor="#F8F8FF" />
+                        android:maxLines="1"
+                        android:drawableLeft="@drawable/ic_search_white_small"
+                        android:textColor="#F8F8FF"
+                       />
 
 
 
@@ -60,16 +66,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:layout_editor_absoluteY="0dp"
-            tools:layout_editor_absoluteX="8dp">
+            tools:layout_editor_absoluteX="8dp"
+            app:tabIndicatorHeight="0dp">
 
         </android.support.design.widget.TabLayout>
 
         <android.support.v4.view.ViewPager
             android:id="@+id/pager"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             tools:layout_editor_absoluteY="8dp"
-            tools:layout_editor_absoluteX="8dp"></android.support.v4.view.ViewPager>
+            tools:layout_editor_absoluteX="8dp">
+        </android.support.v4.view.ViewPager>
 
 
 </LinearLayout>
